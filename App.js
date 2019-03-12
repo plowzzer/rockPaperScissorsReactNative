@@ -10,21 +10,18 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
-  android:
-    'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
-});
+import Choices from './src/components/choices'
+import Score from './src/components/score'
+import ScoreText from './src/components/resultText'
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+        <Text style={styles.welcome}>Rock Paper Scissors</Text>
+        <Score playerScore='0' computerScore='0'/>
+        <ScoreText />
+        <Choices />
       </View>
     );
   }
@@ -33,14 +30,15 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#34495e',
   },
   welcome: {
     fontSize: 20,
     textAlign: 'center',
-    margin: 10,
+    paddingTop: 50,
+    paddingBottom: 20,
+    backgroundColor: '#ecf0f1',
+    fontWeight: 'bold'
   },
   instructions: {
     textAlign: 'center',
