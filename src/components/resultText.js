@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import { StyleSheet, View, Text } from 'react-native';
 
 export default props => {
+  const { resultText } = props
   return(
     <View style={styles.styleField}>
-      <Text style={styles.scoreText}>Papel ganhou de pedra</Text>
+      <Text style={styles.scoreText}>{resultText}</Text>
     </View>
   )
 }

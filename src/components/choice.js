@@ -25,13 +25,15 @@ export default props => {
     if (lose) styleField.push(styles.lostStyle)
     if (drow) styleField.push(styles.drowStyle)
 
+  
   return(
-    <TouchableWithoutFeedback onPress={props.select}>
+    <TouchableWithoutFeedback onPress={props.onSelectChoice}>
       <View style={styleField}>
         <Image style={styles.image} source={imageUri}/>
       </View>
     </TouchableWithoutFeedback>
   )
+  
 }
 
 const styles = StyleSheet.create({
